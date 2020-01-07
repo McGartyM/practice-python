@@ -1,5 +1,6 @@
 def __is_sorted(arr):
     """Simple helper method to check if a list is sorted in ascending order"""
+   
     for i in range (len(arr) - 1):
         if arr[i] > arr[i + 1]:
             return False
@@ -11,9 +12,11 @@ def binary_search(arr, key):
         If passed list is not sorted in ascending order, it will be sorted.
         Empty Lists will return ValueErrors, 
     """
-
+    
+    # We only want to accept list containers.
     if not isinstance(arr, list):
         raise TypeError("Non-list object passed")
+        
     # An empty list has no contents. 
     if len(arr) == 0:
         raise ValueError("Passed list is empty")
@@ -32,5 +35,5 @@ def binary_search(arr, key):
         else:
             return mid
 
-    # Key is not present
+    # Key is not present.
     raise IndexError("List does not contiain key")
